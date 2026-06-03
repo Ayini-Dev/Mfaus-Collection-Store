@@ -9,7 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Mfaus Collection | Home Page</title>
 
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+            <link href="assets/MarketSans-SemiBold.ttf" rel="stylesheet">
 
             <style>
                 body {
@@ -135,7 +135,10 @@
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0, 0, 0, 0.3);
+                    background: linear-gradient(
+                        rgba(74, 69, 69, 0.55),
+                        rgba(101, 96, 96, 0.35)
+                    );
                     z-index: 2;
                 }
                 .hero-content {
@@ -155,23 +158,38 @@
                     width: 60px;
                     border-bottom: 2px solid var(--primary-purple);
                     margin-top: 25px;
-                }
+                }          
                 .hero-content h1 {
-                    font-family: 'Playfair Display', serif;
                     font-size: 52px;
-                    margin-bottom: 5px;
-                    color: white;
+                    line-height: 1.2;
+                    margin-bottom: 10px;
+                    letter-spacing: 1.5px;
+                    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
                 }
+                
                 .hero-content p {
                     font-size: 17px;
-                    color: var(--text-muted);
-                    margin-bottom: 5px 0;
-                    max-width: 600px;
+                    color: rgba(255, 255, 255, 0.85);
+                    margin-bottom: 20px;
                 }
+
                 .hero h2 {
                     font-family: 'Playfair Display', serif;
                     font-size: 48px;
                     margin-bottom: 20px;
+                }
+                .btn.hero-btn {
+                    padding: 12px 28px;
+                    border: 1px solid white;
+                    background: white;
+
+                    color: white;
+                    border-radius: 30px;
+
+                    backdrop-filter: blur(4px);
+                    background: transparent;
+
+                    transition: 0.3s;
                 }
                 .btn {
                     padding: 12px 28px;
@@ -183,6 +201,7 @@
                     margin-top: 5px;
                     transition: 0.3s;
                     background: transparent;
+                    border-radius: 15px;
                 }
                 .nav-right svg {
                     stroke:  var(--accent-gold);
@@ -216,12 +235,17 @@
                     width: 300px;
                     border: 1px solid var(--border-soft);
                     transition: 0.3s;
+                    border-radius: 16px;
                 }
                 .bundle img {
-                    width: 100px;
-                    height: 200px;
-                    object-fit: cover;
+                    width: 100%;
+                    height: 250px;
+                    object-fit: contain;
                     margin-bottom: 15px;
+                    display: block;
+                    border-radius: 12px;
+                    background: #f5f4f1;
+                    padding: 10px;
                 }
                 .bundle h4 {
                     font-family: 'Playfair Display', serif;
@@ -266,14 +290,14 @@
                     font-weight: 600;
                 }
                 .footer {
-                    margin-top: 60px;
+                    margin-top: 0;
                     border-top:  1px solid var(--border-soft);
-                    padding: 50px 80px;
-                    background: var(--bg-white);
+                    padding:  40px 0 20px; 
+                    background: linear-gradient(to bottom, #f5f2ed, #e8e2d9);
                 }
                 .footer-container {
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: space-evenly;;
                     text-align: left;
                     gap: 40px;
                     padding-bottom: 30px;
@@ -282,7 +306,7 @@
                 .footer-section h3 {
                     font-family: 'Playfair Display', serif;
                     margin-bottom: 15px;
-                    color: var(--text-dark);
+                    color: #111;
                     font-size: 18px;
                 }
                 .footer-section p {
@@ -292,21 +316,23 @@
                 .footer-section a {
                     display: block;
                     text-decoration: none;
-                    color: var(--text-muted);
+                    color: #555;
                     font-size: 14px;
                     margin-bottom: 6px;
                     transition: 0.3s;
                 }
                 .footer-section a:hover {
                     opacity: 0.6;
-                    color: var(--accent-gold);
+                    color: #000;
+                    text-decoration: underline;
                 }
                 .footer-bottom {
-                    text-align: center;
-                    margin-top: 40px;
                     font-size: 13px;
-                    color: #999
+                    color: #777;
+                    text-align: center;
+                    margin-top: 20px;
                 }
+
                 .search-container {
                     display: flex;
                     align-items: center;
@@ -439,9 +465,10 @@
                     justify-content: center;
                     align-items: center;
                     z-index: 999;
+                    animation: fadeIn 0.3s ease;
                 }
                 .login-box {
-                    background: #1a1a1a;
+                    background: rgba(253, 251, 247, 0.9);;
                     padding: 30px;
                     width: 300px;
                     border: 1px solid var(--border-soft);
@@ -452,13 +479,13 @@
                 }
                 .login-box input {
                     padding: 10px;
-                    border: 1px solid var(--border-soft);
-                    background: #121212;
-                    color: white;
+                    border: 1px solid rgba(0,0,0,0.08);
+                    background: rgba(255, 255, 255, 0.7);
+                    color: black;
                 }
                 .login-box button {                   
                     padding: 10px;
-                    background: var(--primary-purple);
+                    background: var(--accent-gold);
                     border: none;
                     cursor: pointer;
                 }              
@@ -522,6 +549,144 @@
                 .dropdown-menu a:hover {
                     color: var(--accent-gold);
                 } 
+                .hero-image {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+
+                .hero-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center 35%;
+                }
+                .tapa-divider {
+                    width: 100%;
+                    height: 25px;
+
+                    background-image: url('assets/Tapa.png');
+                    background-repeat: repeat-x;
+                    background-size: auto 100%;
+
+                    margin: 0;
+                    margin-bottom: 0;
+                }
+                .tapa-inner {
+                    height: 15px;
+                    margin: 0;
+                    width: 100vw;
+                    background-image: url('assets/Tapa.png');
+                    background-repeat: repeat-x;
+                    background-size: auto 100%;
+
+                    margin: 0;
+                    margin-bottom: 0;
+                    margin-left: calc(-50vw + 50%);
+                }
+                .social-icons a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #222;
+                    margin: 0 8px;
+                    transition: 0.3s ease;
+                }
+
+                .social-icons img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .social-icons a:hover {
+                    background: #1877f2; /* hover effect */
+                    transform: translateY(-3px);
+                }
+                .social-icons {
+                    margin-bottom: 30px;
+                    position: relative;
+                }
+
+                .social-icons::after {
+                    content: "";
+                    display: block;
+                    width: 60%;
+                    height: 1px;
+                    background: #ccc;
+                    margin: 20px auto 0;
+                }
+                .image-box {
+                    height: 250px;
+                    display: flex;
+                    align-items: center;     /* ✅ centers vertically */
+                    justify-content: center; /* ✅ centers horizontally */
+                    background: #f5f4f1;
+                    border-radius: 12px;
+                    margin-bottom: 15px;
+                }
+
+                .image-box img {
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                    display: block;
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+
+                @keyframes popUp {
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+                .login-box input:focus {
+                    border: 1px solid var(--accent-gold);
+                    box-shadow: 0 0 8px rgba(196,168,115,0.4);
+                }
+                .login-box button {
+                    transition: 0.3s;
+                }
+
+                .login-box button:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+                }
+                .login-box button:active {
+                    transform: scale(0.97);
+                }
+                
+                .login-box input:focus::placeholder {
+                    opacity: 0;
+                }
+                .payment-icons {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+
+                .payment-icons img {
+                    width: 70px;   /* adjust size */
+                    height: auto;
+                    opacity: 0.8;
+                    transition: 0.3s;
+                }
+
+                .payment-icons img:hover {
+                    opacity: 1;
+                    transform: scale(1.05);
+                }
+
+
+
+
                 
 
             </style>
@@ -552,7 +717,7 @@
 
 <!--Here is the search bar section-->
 <div class="search-container">
-    <input type="text" placeholder="Search for jewellery">
+    <input type="text" placeholder="Search for product">
     
     <button onclick="searchProducts()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
@@ -563,8 +728,7 @@
         <section class="hero">
 
             <!-- This is where the slider is located - Only display earrings for now -->
-            <div class="hero-slider">
-                <img src="assets/pexels-gra-wal-38714864-7509257.jpg" class="slide active">
+            <div class="hero-image">
                 <img src="assets/rishika73978-pearl-8012322_1920.jpg" class="slide">
             </div>
 
@@ -581,7 +745,7 @@
                 </h1>
 
                 <p>Discover jewellery that defines your style</p>
-                <a href="shoppage.html" class="btn">Shop Now</a>
+                <a href="shoppage.html" class="btn hero-btn">Shop Now</a>
             </div>
 
             </section>
@@ -591,63 +755,89 @@
 
         <div class="product-grid">
             <div class="bundle">
-                <img src="img1" alt="Bundle 1">
-                <h4>Earing Bundle</h4>
-                <p>Set Pairs</p>
-                <span class="price">$Set Price</span>
-                <a href="#" class="btn">Purchase Bundle</a>
+                <div class="image-box">
+                <img src="earrings/Heart.jpeg" alt="Image 1">
+                </div>
+                <h4>Gold Tone Pearlescent Heart Earrings</h4>
+                <p>$ Set Price</p>
+                <a href="#" class="btn">Purchase Product</a>
             </div>
             <div class="bundle">
-                <img src="img2" alt="Bundle 2">
-                <h4>Necklace Bundle</h4>
-                <p>Set Pairs</p>
-                <span class="price">$Set Price</span>
-                <a href="#" class="btn">Purchase Bundle</a>
+                <div class="image-box">
+                <img src="earrings/Drops.jpeg" alt="Image 2">
+                </div>
+                <h4>Gold Tone Large Drop Earrings</h4>
+                <p>$ Set Price</p>
+                <a href="#" class="btn">Purchase Product</a>
             </div>
             <div class="bundle">
-                <img src="img3" alt="Bundle 3">
-                <h4>Ring Bundle</h4>
-                <p>Set Pairs</p>
-                <span class="price">$Set Price</span>
-                <a href="#" class="btn">Purchase Bundle</a>
+                <div class="image-box">
+                <img src="earrings/Cherry.jpeg" alt="Image 3">
+                </div>
+                <h4>Cherry Drop Earrings</h4>
+                <p>$ Set Price</p>
+                <a href="#" class="btn">Purchase Product</a>
             </div>
             <div class="bundle">
-                <img src="img4" alt="Bundle 4">
-                <h4>Bracelet Bundle</h4>
-                <p>Set Pairs</p>
-                <span class="price">$Set Price</span>
-                <a href="#" class="btn">Purchase Bundle</a>
+                <div class="image-box">
+                <img src="earrings/Bow.jpeg" alt="Image 4">
+                </div>
+                <h4>Pink Beaded Bow Earrings</h4>
+                <p>$ Set Price</p>
+                <a href="#" class="btn">Purchase Product</a>
             </div>
         </div>
+        </div>
+        <div class="tapa-divider">
+
         </div>
 <!--Here is the footer section-->
         <div class="footer">
+            <div class="social-icons">
+                
+        <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61590384397290" target="_blank">
+                    <img src="assets/Facebook_Logo_Primary.png" alt="Facebook">
+                </a>
+
+                <a href="https://www.instagram.com/mfauscollection/" target="_blank">
+                    <img src="assets/Instagram_Glyph_Gradient.png" alt="Instagram">
+                </a>
+            </div>
+
+                    </div>
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>Follow Mfaus</h3>
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">TikTok</a>
+                    <h3>Customer Services</h3>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Order Tracking</a>
                 </div>
+
                 <div class="footer-section">
-                    <h3>Links</h3>
-                    <a href="index.html">Home</a>
-                    <a href="aboutpage.html">About</a>
-                    <a href="shoppage.html">Shop</a>
-            </div>
-            <div class="footer-section">
-                <h3>Need Help?</h3>
-                <a href="#">Shipping Concerns</a>
-                <a href="#">Returns Policy</a>
-                <a href="#">Contact Support</a>
+                    <h3>Information</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Help</h3>
+                    <a href="#">Contact</a>
+                    <a href="mailto:mfaus.support@gmail.com?subject=Support%20Request">Support</a>
+                    </div>
+
+                <div class="footer-section">
+                    <h3>Payments</h3>
+                    <div class="payment-icons">
+                        <img src="assets/M-PAISA.jpg" alt="M-PAISA">
+                        <img src="assets/MyCash.jpg" alt="MyCash">
+                        <img src="assets/Visa - MasterCard.png" alt="Mastercard">
+
+                    </div>
+                </div>
         </div>
-        <div class="footer-section">
-            <h3>Our Guarantees</h3>
-            <a>Free Fiji Shipping</a>
-            <a>30-Day Returns</a>
-            <a>Secure Payment</a>
-        </div>
-        </div>
+        <div class="tapa-inner"></div>
             <p class="footer-bottom">
               © 2026 Mfaus Collection. All rights reserved.
             </p>
@@ -670,24 +860,13 @@
         test();
 
         </script>
-        
-        <script>
-            const slides = document.querySelectorAll(".slide");
-            let index = 0;
-
-            setInterval(() => {
-                slides[index].classList.remove("active");
-                index = (index + 1) % slides.length;
-                slides[index].classList.add("active");
-            }, 4000);
-        </script>
 
         <div class="login-modal" id="loginModal">
             <div class="login-box">
                 <h3>Login</h3>
 
                 <input type="email" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="password">
+                <input type="password" id="password" placeholder="Password">
 
                 <button onclick="login()">Login</button>
                 <button onclick="signup()">Sign Up</button>
@@ -753,9 +932,18 @@ function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
     menu.classList.toggle('show');
 }
+const msg = document.getElementById("auth-message");
+
+if (error) {
+    msg.style.color = "red";
+    msg.innerText = error.message;
+} else {
+    msg.style.color = "green";
+    msg.innerText = "Success!";
+}
 
 </script>
 
 
     </body>
-</html> 
+</html>  
