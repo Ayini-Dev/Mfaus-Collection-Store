@@ -718,187 +718,134 @@
                     opacity: 1;
                     transform: scale(1.05);
                 }
-                @media (max-width: 768px) {
+                @media (max-width:768px){
 
-                    /* ===== NAVBAR ===== */
-
-                    .navbar {
-                        padding: 0 12px;
-                        height: 64px;
-                        margin: 0;
-                        border-radius: 0;
-                        position: sticky;
-                        top: 0;
-                        z-index: 9999;
+                    body{
+                        text-align:center;
                     }
 
-                    .nav-left {
-                        flex: 0 0 auto;
+                    .navbar{
+                        padding:0 16px;
+                        height:70px;
+                        margin:0;
+                        border-radius:0;
+                        top:0;
                     }
 
-                    .logo {
-                        position: static;
-                        transform: none;
-                        flex: 1;
-                        display: flex;
-                        justify-content: center;
+                    .logo{
+                        position:static;
+                        transform:none;
+                        flex:1;
                     }
 
-                    .logo img {
-                        height: 42px;
-                        width: auto;
+                    .logo img{
+                        height:58px;
                     }
 
-                    .nav-right {
-                        gap: 12px;
+                    .nav-left{
+                        gap:10px;
                     }
 
-                    .nav-right svg {
-                        width: 22px;
-                        height: 22px;
+                    .nav-right{
+                        gap:14px;
                     }
 
-                    /* ===== MENU ===== */
-
-                    .dropdown-menu {
-                        position: fixed;
-                        top: 64px;
-                        left: 10px;
-                        right: 10px;
-
-                        width: auto;
-                        border-radius: 14px;
-
-                        padding: 10px;
+                    .nav-right svg{
+                        width:22px;
+                        height:22px;
                     }
 
-                    .dropdown-menu a {
-                        padding: 14px 10px;
-                        font-size: 15px;
+                    .dropdown-menu{
+                        top:72px;
+                        left:12px;
+                        width:200px;
+                        padding:15px;
+                        border-radius:12px;
                     }
 
-                    /* ===== SEARCH ===== */
-
-                    .search-container {
-                        width: calc(100% - 24px);
-                        margin: 12px auto;
-                        height: 46px;
+                    .search-container{
+                        width:calc(100% - 32px);
+                        height:48px;
+                        margin:15px auto;
                     }
 
-                    .search-container input {
-                        font-size: 14px;
+                    .hero{
+                        height:60vh;
+                        min-height:420px;
+                        padding:0 20px;
                     }
 
-                    /* ===== HERO ===== */
-
-                    .hero {
-                        height: 55vh;
-                        min-height: 420px;
-                        padding: 0 20px;
+                    .hero-content h1{
+                        font-size:2rem;
+                        line-height:1.1;
                     }
 
-                    .hero-content {
-                        max-width: 100%;
+                    .hero-content p{
+                        font-size:15px;
+                        max-width:280px;
+                        margin:auto;
                     }
 
-                    .hero-content h1 {
-                        font-size: 2rem;
-                        line-height: 1.15;
-                        margin-bottom: 10px;
+                    .hero-btn{
+                        padding:14px 30px;
                     }
 
-                    .hero-content p {
-                        font-size: 15px;
-                        max-width: 280px;
+                    .products{
+                        padding:40px 16px;
                     }
 
-                    .hero-btn {
-                        min-height: 48px;
-                        padding: 14px 28px;
+                    .products h3{
+                        font-size:28px;
                     }
 
-                    /* ===== PRODUCTS ===== */
-
-                    .products {
-                        padding: 40px 15px;
+                    .product-grid{
+                        flex-direction:column;
+                        gap:18px;
                     }
 
-                    .products h3 {
-                        font-size: 26px;
-                        margin-bottom: 25px;
+                    .bundle{
+                        width:100%;
+                        max-width:none;
+                        padding:18px;
+                        box-sizing:border-box;
                     }
 
-                    .product-grid {
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                        gap: 15px;
+                    .image-box{
+                        height:220px;
                     }
 
-                    .bundle {
-                        max-width: 100%;
-                        padding: 12px;
-                        border-radius: 14px;
+                    .bundle h4{
+                        font-size:16px;
+                        line-height:1.4;
                     }
 
-                    .image-box {
-                        height: 170px;
+                    .bundle .btn{
+                        display:block;
+                        width:100%;
+                        box-sizing:border-box;
                     }
 
-                    .bundle h4 {
-                        font-size: 14px;
-                        line-height: 1.3;
-                        min-height: 38px;
+                    .login-box{
+                        width:calc(100% - 40px);
+                        max-width:350px;
                     }
 
-                    .bundle p {
-                        font-size: 13px;
+                    .footer-container{
+                        flex-direction:column;
+                        gap:18px;
+                        padding:0 20px;
+                        text-align:left;
                     }
 
-                    .bundle .btn {
-                        width: 100%;
-                        display: block;
-                        text-align: center;
-                        padding: 12px;
-                        font-size: 13px;
+                    .payment-icons{
+                        flex-wrap:wrap;
                     }
 
-                    /* ===== LOGIN ===== */
-
-                    .login-box {
-                        width: calc(100% - 40px);
-                        max-width: 340px;
-                        padding: 25px;
-                    }
-
-                    /* ===== FOOTER ===== */
-
-                    .footer {
-                        padding-top: 30px;
-                    }
-
-                    .footer-container {
-                        flex-direction: column;
-                        gap: 25px;
-                        padding: 0 20px;
-                    }
-
-                    .footer-section {
-                        width: 100%;
-                    }
-
-                    .payment-icons {
-                        flex-wrap: wrap;
-                        justify-content: flex-start;
-                    }
-
-                    .payment-icons img {
-                        height: 24px;
-                    }
-
-                    .social-icons::after {
-                        width: 90%;
+                    .social-icons::after{
+                        width:85%;
                     }
                 }
+        
                 .signup-text {
                     margin-top: 20px;
                     font-size: 14px;
