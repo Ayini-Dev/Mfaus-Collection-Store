@@ -514,9 +514,9 @@
                     transition: 0.3s;
                 }
                 .dropdown-menu {
-                    position: fixed;
-                    top: 80px;
-                    left: 200px;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
 
                     background: white;
                     border: 1px solid var(--border-soft);
@@ -688,28 +688,33 @@
                 }
                 
                 @media (max-width: 768px) {
-                    
+                                      
                     .dropdown-menu {
-                            left: 15px;
-                            top: 70px;
-                            width: 150px;
+                            width: 180px;
+                            left: 10px;
+                            top: 65px;
+                            border-radius: 12px;
+                            padding: 15px;
+                    }
+                    .navbar {
+                            padding: 10px 15px;
+                            flex-direction: row;
+                            height: 60px;
+                            position: sticky;
+                            top: 0;
+                            background: rgba(255,255,255,0.95);
+                            backdrop-filter: blur(10px);
+                            z-index: 10000;
                         }
-
-                    .navbar {                     
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 12px 15px;
-                        max-width: 100%;
-                        margin: 0;
-                        border-radius: 0;
-                        }             
+          
                     .nav-left {
                         flex: 1;
                         justify-content: flex-start;
+                        position: relative;
+                        gap: 12px;
                         }
                     .logo img {
-                        height: 55px;
+                        height: 45px;
                     }
 
                     .product-grid {
@@ -753,8 +758,24 @@
                     .nav-right svg {
                             width: 20px;
                             height: 20px;
+                        }                      
+                    .dropdown-menu a {
+                            padding: 10px 5px;
+                            border-bottom: 1px solid rgba(0,0,0,0.05);
+                        }          
+                    .dropdown-menu a:last-child {
+                                border-bottom: none;
+                            }
+                    .hero {
+                        height: 60vh;
+                        padding: 0 15px;
+                    }               
+                    .hero-overlay {
+                            background: linear-gradient(
+                                rgba(0, 0, 0, 0.6),
+                                rgba(0, 0, 0, 0.3)
+                            );
                         }
-
 
     
                 }
@@ -835,7 +856,7 @@
                 </div>
                 <h4>Gold Tone Pearlescent Heart Earrings</h4>
                 <p>$ Set Price</p>
-                <a href="#" class="btn">Purchase Product</a>
+                <a href="#" class="btn">View Product</a>
             </div>
             <div class="bundle">
                 <div class="image-box">
@@ -843,7 +864,7 @@
                 </div>
                 <h4>Gold Tone Large Drop Earrings</h4>
                 <p>$ Set Price</p>
-                <a href="#" class="btn">Purchase Product</a>
+                <a href="#" class="btn">View Product</a>
             </div>
             <div class="bundle">
                 <div class="image-box">
@@ -851,7 +872,7 @@
                 </div>
                 <h4>Cherry Drop Earrings</h4>
                 <p>$ Set Price</p>
-                <a href="#" class="btn">Purchase Product</a>
+                <a href="#" class="btn">View Product</a>
             </div>
             <div class="bundle">
                 <div class="image-box">
@@ -859,7 +880,7 @@
                 </div>
                 <h4>Pink Beaded Bow Earrings</h4>
                 <p>$ Set Price</p>
-                <a href="#" class="btn">Purchase Product</a>
+                <a href="#" class="btn">View Productt</a>
             </div>
         </div>
         </div>
