@@ -739,15 +739,21 @@
                         top: 0;
                     }
 
+                    .nav-left,
+                    .nav-right {
+                        flex: 1;
+                    }
+
                     .nav-left {
                         gap: 8px;
                         flex: 0 0 auto;
+                        justify-content: flex-start;
                     }
 
                     .logo {
                         position: static;
                         transform: none;
-                        flex: 1;
+                        flex: 0 0 auto;
                         display: flex;
                         justify-content: center;
                     }
@@ -760,6 +766,7 @@
 
                     .nav-right {
                         gap: 10px;
+                        justify-content: flex-end;
                     }
 
                     .nav-right svg {
@@ -784,6 +791,9 @@
                         height: 46px;
                         margin: 12px auto;
                         padding: 0 12px;
+                    }
+                    .hero-content{
+                        border:2px solid red;
                     }
 
                     .search-container input {
