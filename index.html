@@ -7,7 +7,7 @@
         <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Mfaus Collection | Home Page</title>
+            <title>Mfaus Collection Jewellery</title>
 
             <link href="assets/MarketSans-SemiBold.ttf" rel="stylesheet">
 
@@ -27,25 +27,25 @@
                     margin-top: 50px;
                 }        
                 .navbar {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-                    padding: 25px 80px;
+                padding: 25px 80px;
 
-                    background: rgba(255, 255, 255, 0.9);
-                    backdrop-filter: blur(8px);
+                background: #f7f4ef; /* ✅ soft premium tone */
+                backdrop-filter: blur(12px);
 
-                    border-bottom: 1px solid rgba(0,0,0,0.05);
+                border-radius: 12px;
 
-                    max-width: 1300px;
-                    margin: 20px auto;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* ✅ depth */
 
-                    border-radius: 12px;
-                    z-index: 1000;
-                    position: sticky;
+                max-width: 1300px;
+                margin: 30px auto;
 
-                }
+                position: sticky;
+                z-index: 1000;
+            }
                 .nav-left {
                     display: flex;
                     align-items: center;
@@ -472,7 +472,7 @@
                     background: rgba(0,0,0,0.7);
                     justify-content: center;
                     align-items: center;
-                    z-index: 999;
+                    z-index: 2000;
                     animation: fadeIn 0.3s ease;
                 }
                 .login-box {
@@ -539,7 +539,7 @@
                 .dropdown-menu {
                     position: absolute;
                     top: 60px;
-                    left: 0;
+                    left: 80px;
 
                     background: white;
                     border: 1px solid var(--border-soft);
@@ -647,22 +647,7 @@
                     background: #ccc;
                     margin: 20px auto 0;
                 }
-                .image-box {
-                    height: 250px;
-                    display: flex;
-                    align-items: center;     /* ✅ centers vertically */
-                    justify-content: center; /* ✅ centers horizontally */
-                    background: #f5f4f1;
-                    border-radius: 12px;
-                    margin-bottom: 15px;
-                }
 
-                .image-box img {
-                    max-width: 90%;
-                    max-height: 90%;
-                    object-fit: contain;
-                    display: block;
-                }
                 @keyframes fadeIn {
                     from { opacity: 0; }
                     to { opacity: 1; }
@@ -1056,45 +1041,359 @@
                     text-align: center;
                     margin-bottom: 15px;
                 }
+                .nav-search {
+                    display: flex;
+                    align-items: center;
+                    background: #e5e5e5;
+                    border-radius: 30px;
+                    padding: 8px 15px;
+                    width: 250px;
+                    cursor: pointer;
+                    margin-right: 15px;
+                }
+
+                /* Input inside */
+                .nav-search input {
+                    border: none;
+                    background: transparent;
+                    outline: none;
+                    flex: 1;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+
+                /* Icon */
+                .nav-search svg {
+                    color: #555;
+                }    
+                .search-overlay {
+                    position: fixed;
+                    top: 100px;
+                    height: calc(100% - 100px);
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    background: #f3f3f3;
+                    padding: 20px 40px;
+
+                    display: none;
+                    flex-direction: column;
+
+                    z-index: 2000;
+                }
+
+                .search-overlay.active {
+                    display: flex;
+                }
+
+                /* TOP SECTION */              
+                .search-top {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+
+                /* BIG SEARCH BAR */            
+                .big-search {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background: #e5e5e5;
+                    border-radius: 30px;
+                    padding: 12px 15px 12px 18px;
+                    width: 100%;
+                }
+
+                .big-search input {
+                    border: none;
+                    background: transparent;
+                    outline: none;
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                }            
+               .close-search {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    font-size: 16px;       
+                    color: #888;           
+                    cursor: pointer;
+
+                    line-height: 1;         
+                }
 
 
+                /* CONTENT */
+                .search-content {
+                    margin-top: 30px;
+                }
 
+                /* TITLE */
+                .search-content h3 {
+                    margin-bottom: 20px;
+                    font-weight: normal;
+                }
+                .search-item {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 18px 0;
+                    border-bottom: 1px solid #ddd;
+                    cursor: pointer;
+                }      
+                .search-wrapper {
+                    position: relative;
+                    width: 100%;
+                    max-width: 900px;   
+                    margin: 0 auto;     
+                }
+                .category-row {
+                    display: flex;
+                    gap: 20px;
+                    overflow-x: auto;
+                    padding: 30px 60px;
+                    scroll-snap-type: x mandatory;
+                    justify-content: space-between;
+                }
+                .category-card {
+                    flex: 1;
+                    position: relative;
+                    min-width: 240px;
+                    height: 340px;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    flex-shrink: 0;
+                    cursor: pointer;
 
+                    scroll-snap-align: start;
+                }
+                .category-card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .category-card::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+                    z-index: 1; /* ✅ ensure it's behind text */
+                }
+
+                .category-card p {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: white;
+                    font-size: 13px;
+                    letter-spacing: 2px;
+                    z-index: 2; 
+                }
+
+                .shop-now {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translate(-50%, 10px);
+
+                    color: rgba(255,255,255,0.95); 
+                    font-size: 12px;
+                    letter-spacing: 2px;
+
+                    text-decoration: underline;
+                    text-underline-offset: 4px;
+
+                    opacity: 0;
+                    transition: all 0.35s ease;
+
+                    z-index: 2; 
+                    white-space: nowrap;
+                }
+
+                .category-card:hover .shop-now {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+                .product-grid {
+                    display: flex;
+                    gap: 30px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
 
                 
+                .product-card {
+                    width: 100%;
+                    max-width: 300px;
+                    background: #f3efe9; 
+                    overflow: hidden;
+                    border-radius: 0;
+                    border-radius: 12px;
+                }
+
+                
+                .product-image {
+                    position: relative;
+                    width: 100%;
+                    height: 280px;
+                    background: #eae4db; 
+                }
+
+                .product-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                
+                .badge {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+
+                    background: #e6c9a8;
+                    color: #333;
+                    font-size: 11px;
+                    padding: 4px 8px;
+                    letter-spacing: 1px;
+                }
+
+                
+                .product-info {
+                    padding: 15px;
+                    text-align: left;
+                }
+
+                .product-info h4 {
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                }
+
+                .product-info .price {
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                }
+
+                .product-info .meta {
+                    font-size: 12px;
+                    color: #888;
+                }             
 
             </style>
         </head>
         <body>
 <div class="navbar">
+
     <div class="nav-left">
-        <div class="burger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="burger-wrapper">
+
+            <div class="burger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- dropdown -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="index.html">Home</a>
+                <a href="aboutpage.html">About</a>
+                <a href="shoppage.html">Shop</a>
+            </div>
+
         </div>
     </div>
 
-    <div class="logo"><img src="assets/WhatsApp_Image_2026-05-31_at_18.13.41-removebg-preview.png" alt="Mfaus Collection Logo"></div>
-    <div class="nav-right"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart">
-                    <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>
-                           <span onclick="openLogin()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/></svg></span>
-                        </div>
-</div>
-<div class="dropdown-menu" id="dropdownMenu">
-    <a href="index.html">Home</a>
-    <a href="aboutpage.html">About</a>
-    <a href="shoppage.html">Shop</a>
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/WhatsApp_Image_2026-05-31_at_18.13.41-removebg-preview.png" alt="Mfaus Collection Logo">
+        </a>
+    </div>
+
+    <div class="nav-right">
+
+        <!-- search -->
+        <div class="nav-search" id="navSearch" onclick="openSearch()">
+            <input type="text" placeholder="Search for product" readonly>
+
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.3-4.3"/>
+            </svg>
+        </div>
+
+        <!-- cart -->
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handbag-icon lucide-handbag"><path d="M2.048 18.566A2 2 0 0 0 4 21h16a2 2 0 0 0 1.952-2.434l-2-9A2 2 0 0 0 18 8H6a2 2 0 0 0-1.952 1.566z"/><path d="M8 11V6a4 4 0 0 1 8 0v5"/></svg>
+        </span>
+
+        <span onclick="openLogin()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+
+    </div>
+
 </div>
 
-<!--Here is the search bar section-->
-<div class="search-container">
-    <input type="text" placeholder="Search for product">
-    
-    <button onclick="searchProducts()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-    </button>
+<div class="search-overlay" id="searchOverlay" onclick="handleOverlayClick(event)">
+
+<div class="search-top">
+
+    <div class="search-wrapper">
+
+        <div class="big-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.3-4.3"/>
+            </svg>
+
+            <input type="text" placeholder="Search">
+        </div>
+
+        <!-- ✅ CLOSE BUTTON (INSIDE WRAPPER) -->
+        <span class="close-search" onclick="closeSearch()">✕</span>
+
+    </div>
+
+</div>
+
+
+    <!-- POPULAR SEARCHES -->
+    <div class="search-content">
+        <h3>Popular Searches</h3>
+
+        <div class="search-item">
+            <span>Earrings</span>
+            <span>></span>
+        </div>
+
+        <div class="search-item">
+            <span>Necklaces</span>
+            <span>></span>
+        </div>
+
+        <div class="search-item">
+            <span>Bracelets</span>
+            <span>></span>
+        </div>
+
+        <div class="search-item">
+            <span>Rings</span>
+            <span>></span>
+        </div>
+
+        <div class="search-item">
+            <span>Products on sale</span>
+            <span>></span>
+        </div>
+    </div>
+
 </div>
         
 <!--Here is the hero section-->
@@ -1112,55 +1411,58 @@
             <div class="hero-content">
                 <h1 class="hero-title">
                 <span>Wear</span>
-                <span>Confidence.</span>
+                <span>Confidence</span>
                 <span>Wear</span>
-                <span>Mfaus.</span>
+                <span>Mfaus</span>
                 </h1>
 
                 <p>Discover jewellery that defines your style</p>
                 <a href="shoppage.html" class="btn hero-btn">Shop Now</a>
             </div>
-
             </section>
+
+            <div class="category-row">
+
+    <div class="category-card">
+        <img src="assets/bestsellers.jpg">
+        <p>BESTSELLERS</p>
+        <span class="shop-now">VIEW PRODUCTS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="assets/newin.png">
+        <p>NEW IN</p>
+        <span class="shop-now">VIEW PRODUCTS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="assets/earringsCover.png">
+        <p>EARRINGS</p>
+        <span class="shop-now">VIEW PRODUCTS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="assets/necklaceCover.png">
+        <p>NECKLACES</p>
+        <span class="shop-now">VIEW PRODUCTS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="assets/braceletCover.png">
+        <p>BRACELETS</p>
+        <span class="shop-now">VIEW PRODUCTS</span>
+    </div>
+
+</div>
 <!--Here is the product section-->
         <div class="products">
-            <h3>Featured Products</h3>
+    <h3>Featured Products</h3>
 
-        <div class="product-grid">
-            <div class="bundle">
-                <div class="image-box">
-                <img src="earrings/Heart.jpeg" alt="Image 1">
-                </div>
-                <h4>Gold Tone Pearlescent Heart Earrings</h4>
-                <p>$ Set Price</p>
-                <a href="#" class="btn">View Product</a>
-            </div>
-            <div class="bundle">
-                <div class="image-box">
-                <img src="earrings/Drops.jpeg" alt="Image 2">
-                </div>
-                <h4>Gold Tone Large Drop Earrings</h4>
-                <p>$ Set Price</p>
-                <a href="#" class="btn">View Product</a>
-            </div>
-            <div class="bundle">
-                <div class="image-box">
-                <img src="earrings/Cherry.jpeg" alt="Image 3">
-                </div>
-                <h4>Cherry Drop Earrings</h4>
-                <p>$ Set Price</p>
-                <a href="#" class="btn">View Product</a>
-            </div>
-            <div class="bundle">
-                <div class="image-box">
-                <img src="earrings/Bow.jpeg" alt="Image 4">
-                </div>
-                <h4>Pink Beaded Bow Earrings</h4>
-                <p>$ Set Price</p>
-                <a href="#" class="btn">View Productt</a>
-            </div>
-        </div>
-        </div>
+    <div class="product-grid" id="productGrid">
+
+
+</div>
+</div>
         <div class="tapa-divider">
 
         </div>
@@ -1203,7 +1505,7 @@
                 <div class="footer-section">
                     <h3>Payments</h3>
                     <div class="payment-icons">
-                        <img src="assets/M-PAISA.jpg" alt="M-PAISA">
+                        <img src=assets/mpaisa-pay.png>
                         <img src="assets/MyCash.jpg" alt="MyCash">
                         <img src="assets/Visa - MasterCard.png" alt="Mastercard">
 
@@ -1226,38 +1528,82 @@
                 );
             }
             
-        async function test() {
-            const {data,error} = await window.supabaseClient.from("products").select("*");
-            console.log(data,error);
-        }
-        test();
+        async function loadProducts() {
+    const { data, error } = await window.supabaseClient
+        .from("products")
+        .select("*")  
+        .order("created_at", { descending: false })
+        .limit(4);
+
+
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    const grid = document.getElementById("productGrid");
+
+    grid.innerHTML = ""; // remove fake products
+
+    data.forEach(product => {
+        const card = `
+            <div class="product-card" onclick="goToProduct(${product.id})">
+                <div class="product-image">
+                    <img src="${product.image_url}">
+                    <span class="badge">New</span>
+                </div>
+
+                <div class="product-info">
+                    <h4>${product.name}</h4>
+                    <p class="price">$${product.price}</p>
+                </div>
+            </div>
+        `;
+
+        grid.innerHTML += card;
+    });
+}
+
+loadProducts();
+
 
         </script>
 
-        <div class="login-modal" id="loginModal">
+        <div class="login-modal" id="loginModal" onclick="handleLoginClick(event)">
+
             <div class="login-box">
-                <h3>Login</h3>
-                <form id="loginForm">
+                <h3 id="formTitle">Login</h3>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email" required>
+<form id="authForm">
 
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <a href="#" class="forgot-password">Forgot password?</a>
+    <!-- SIGNUP ONLY -->
+    <div id="extraFields" style="display: none;">
+        <label>First Name</label>
+        <input type="text" id="firstName" placeholder="First name">
 
-                <button type="submit">Login</button>
+        <label>Last Name</label>
+        <input type="text" id="lastName" placeholder="Last name">
 
-            </form>
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="Phone number">
+    </div>
 
-            <p class="signup-text">
-                Don't have an account?
-                <a href="#" onclick="signup()">Sign up</a>
-            </p>
-           
-                <p id="auth-message"></p>
+    <!-- BOTH -->
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Email">
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Password">
+
+    <button type="submit" id="submitBtn">Login</button>
+</form>
+
+<p class="signup-text">
+    <span id="toggleText">Don't have an account?</span>
+    <a href="#" id="toggleLink" onclick="toggleAuth()">Sign up</a>
+</p>
+
+<p id="auth-message"></p>
 
                 <span class="close" onclick="closeLogin()">×</span>
                 </div>
@@ -1265,6 +1611,33 @@
         </div>
 
         <script>
+let isSignup = false;
+
+function toggleAuth() {
+    isSignup = !isSignup;
+
+    const extra = document.getElementById("extraFields");
+    const title = document.getElementById("formTitle");
+    const btn = document.getElementById("submitBtn");
+    const toggleText = document.getElementById("toggleText");
+    const toggleLink = document.getElementById("toggleLink");
+
+    if (isSignup) {
+        extra.style.display = "block";
+        title.innerText = "Sign Up";
+        btn.innerText = "Sign Up";
+
+        toggleText.innerText = "Already have an account?";
+        toggleLink.innerText = "Login";
+    } else {
+        extra.style.display = "none";
+        title.innerText = "Login";
+        btn.innerText = "Login";
+
+        toggleText.innerText = "Don't have an account?";
+        toggleLink.innerText = "Sign up";
+    }
+}
 
 function openLogin() {
     document.getElementById("loginModal").style.display = "flex";
@@ -1277,26 +1650,56 @@ function closeLogin() {
 async function signup() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
-    console.log("SIGNUP CLICKED");
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const phone = document.getElementById("phone").value;
 
     const { data, error } = await window.supabaseClient.auth.signUp({
         email,
         password
     });
 
-    console.log(data, error);
-
     if (error) {
         document.getElementById("auth-message").innerText = error.message;
+        return;
+    }
+
+    // ✅ FIX HERE
+    const {
+        data: { user }
+    } = await window.supabaseClient.auth.getUser();
+
+    if (!user) {
+        document.getElementById("auth-message").innerText =
+            "User created but not retrieved.";
+        return;
+    }
+
+    // ✅ INSERT NOW WORKS
+    const { error: insertError } = await window.supabaseClient
+        .from("users")
+        .insert([
+            {
+                id: user.id,
+                first_name: firstName,
+                last_name: lastName,
+                phone: phone,
+                email: email
+            }
+        ]);
+
+    if (insertError) {
+        document.getElementById("auth-message").innerText = insertError.message;
     } else {
-        document.getElementById("auth-message").innerText = "Signup successful!";
+        document.getElementById("auth-message").innerText =
+            "Signup successful!";
     }
 }
 
 
+
 async function login(event) {
-    event.preventDefault(); // 🚨 stops page reload
+    event.preventDefault(); 
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -1311,9 +1714,18 @@ async function login(event) {
     console.log(data, error);
 
     if (error) {
-        document.getElementById("auth-message").innerText = error.message;
-    } else {
-        document.getElementById("auth-message").innerText = "Login worked!";
+    document.getElementById("auth-message").innerText = error.message;
+} else {
+    document.getElementById("auth-message").innerText = "Login successful!";
+    closeLogin(); // ✅ close modal
+}
+}
+function handleLoginClick(event) {
+    const box = document.querySelector(".login-box");
+
+    // ✅ if click is outside the box → close
+    if (!box.contains(event.target)) {
+        closeLogin();
     }
 }
 
@@ -1321,9 +1733,67 @@ function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
     menu.classList.toggle('show');
 }
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("loginForm").addEventListener("submit", login);
+document.addEventListener("DOMContentLoaded", async function () {
+
+    document.getElementById("authForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        if (isSignup) {
+            signup();
+        } else {
+            login(e);
+        }
+    });
+
 });
+function openSearch() {
+    // show big overlay
+    document.getElementById("searchOverlay").classList.add("active");
+
+    // ✅ hide small navbar search
+    document.getElementById("navSearch").style.display = "none";
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeSearch() {
+    document.getElementById("searchOverlay").classList.remove("active");
+
+    // ✅ bring small search back
+    document.getElementById("navSearch").style.display = "flex";
+
+    document.body.style.overflow = "auto";
+}
+function handleOverlayClick(event) {
+    const overlay = document.getElementById("searchOverlay");
+
+    if (event.target === overlay) {
+        closeSearch();
+    }
+}
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeSearch();
+    }
+});
+function goToProduct(id) {
+    window.location.href = "product.html?id=" + id;
+}
+async function checkUser() {
+    const { data } = await window.supabaseClient.auth.getUser();
+
+    if (data?.user) {
+        console.log("Logged in:", data.user.email);
+
+        document.getElementById("auth-message").innerText =
+            "Logged in as " + data.user.email;
+    }
+}
+async function logout() {
+    await window.supabaseClient.auth.signOut();
+    alert("Logged out");
+    location.reload();
+}
 
 </script>
 
