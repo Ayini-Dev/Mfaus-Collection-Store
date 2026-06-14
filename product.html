@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 40px;
+    background: #f5f4f1;
+}
+
+.product-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.product-image img {
+    width: 400px;
+    border-radius: 12px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h1 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 22px;
+    color: #c4a873;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #c4a873;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="product-container" id="productPage">
+    <!-- product loads here -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+    if (!window.supabaseClient) {
+                window.supabaseClient = window.supabase.createClient(
+                    "https://cxpapakxnuejtytjvjfb.supabase.co",
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN4cGFwYWt4bnVlanR5dGp2amZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzQwOTcsImV4cCI6MjA5NTE1MDA5N30.8C-FC2x50zeUequd8LGqPVZds2nLtTfcLKsmejsWNCc"
+                );
+            }
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+
+console.log("Product ID:", productId);
+
+async function loadProduct() {
+
+    const { data, error } = await window.supabaseClient
+    .from("products")
+    .select("*")
+    .eq("id", Number(productId))
+    .single();
+
+console.log("ID:", productId);
+console.log("DATA:", data);
+console.log("ERROR:", error);
+
+    if (error || !data) {
+    document.getElementById("productPage").innerHTML = `
+        <h2>Product not found</h2>
+        <p>ID: ${productId}</p>
+    `;
+    return;
+}
+    const container = document.getElementById("productPage");
+
+    container.innerHTML = `
+        <div class="product-image">
+            <img src="${data.image_url}">
+        </div>
+
+        <div class="product-info">
+            <h1>${data.name}</h1>
+            <p class="price">$${data.price}</p>
+            <p>${data.description || "No description yet."}</p>
+
+            <button>Add to Cart</button>
+        </div>
+    `;
+}
+
+loadProduct();
+
+
+
+</script>
+
+</body>
+</html>
